@@ -1,23 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
-
+import Menu from './components/menu.jsx';
+import Footer from './components/footer';
+var productos = [
+  {
+    id: 1,
+    valor: "prueba"
+  },
+  {
+    id: 2,
+    valor: "prueba2"
+  }
+]
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="menu-superior">
+        <Menu />
+      </div>
+      <div className="body-app">
+        soy el body
+      </div>
+      <div className="footer">
+        <Footer texto="hola vengo desde una propiedad" valor="1" productos={productos}/>
+      </div>
     </div>
   );
 }
