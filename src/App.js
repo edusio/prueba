@@ -1,29 +1,33 @@
-import Menu from './components/menu.jsx';
+import { Component } from 'react';
+import Menu from './components/menu';
 import Footer from './components/footer';
-var productos = [
-  {
-    id: 1,
-    valor: "prueba"
-  },
-  {
-    id: 2,
-    valor: "prueba2"
-  }
-]
-function App() {
-  return (
-    <div className="App">
-      <div className="menu-superior">
+import Dashboard from './pages/dashboarh';
+import Prueba from './pages/prueba';
+
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+
+class App extends Component {
+  render() {
+    return (
+      <div>
         <Menu />
+        <div>
+          <Router>
+            <div>
+              <Route exact path="/" component={Dashboard} />
+              <Route exact path="/prueba" component={Prueba} />
+            </div>
+          </Router>
       </div>
-      <div className="body-app">
-        soy el body
-      </div>
-      <div className="footer">
-        <Footer texto="hola vengo desde una propiedad" valor="1" productos={productos}/>
-      </div>
-    </div>
-  );
+      <Footer />
+     </div>
+    );
+  }
 }
 
 export default App;

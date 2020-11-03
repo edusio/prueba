@@ -16,21 +16,19 @@ class Footer extends Component {
         });
         
     }
-
+    
 
     render() {
         const { contador } = this.state;
         const { texto, productos } = this.props;
         return (
             <div className="c-footer">
-              <div>{texto}</div>
-              <button onClick={this.sumarContador}>clickame</button>
-              <p>El valor acumulado es {contador}</p>
-              <div className="productos">
-                  {productos.forEach(element => {
-                      return <p>1</p>;
-                  })}
-              </div>
+                <div>{texto}</div>
+                <button onClick={this.sumarContador}>clickame</button>
+                <p>El valor acumulado es {contador}</p>
+                <div className="productos">
+                 
+                </div>
             </div>
         );
     }
